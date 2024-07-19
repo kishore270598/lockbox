@@ -1,0 +1,75 @@
+<div class="container mx-auto my-16">
+  <h1 class="text-5xl mt-0 mb-5">LockBox Manger</h1>
+  <button
+    class="mb-5 mx-0.5 px-5 py-3 text-sm bg-gray-900 text-white shadow rounded-md"
+  >
+    Add New Site
+  </button>
+  <div class="px-20 py-10 mb-10 my-5 border-4 border-gray-900">
+    <h2 class="text-3xl text-center">Add New Site</h2>
+    <p class="text-center">You can add a new site from the below form</p>
+    <form>
+      <div class="flex flex-col">
+        <label class="text-lg font-medium mb-2"> Site Name</label>
+        <input
+          type="text"
+          name="siteName"
+          class="border-2 border-gray-900 p-2 rounded-lg w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="text-lg font-medium mb-2"> Site URL</label>
+        <input
+          type="text"
+          name="siteURL"
+          class="border-2 border-gray-900 p-2 rounded-lg w-full"
+        />
+      </div>
+      <div class="flex flex-col">
+        <label class="text-lg font-medium mb-2"> Site Image</label>
+        <input
+          type="text"
+          name="siteImgURL"
+          class="border-2 border-gray-900 p-2 rounded-lg w-full"
+        />
+      </div>
+      <button
+        class="mt-10 px-5 py-3 mx-0.5 text-sm bg-gray-900 text-white shadow rounded-sm"
+      >
+        Add New Site
+      </button>
+      <button
+        class="mt-10 px-5 py-3 mx-0.5 text-sm border-2 border-gray-900 text-gray-900 shadow rounded-md"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+  <div class="grid grid-cols-4 gap-5">
+    <div class="shadow-lg border-2 border-gray-900">
+      <img src="https://player.m7g.twitch.tv/careers-evp/poster.jpg" alt="" />
+      <h3 class="p-3 text-xl font-bold">Twitch.com</h3>
+      <div class="w-60 m-3 px-3 bg-blue-700 text-blue-200 rounded-lg text-sm">
+        http://twitch.com
+      </div>
+
+      <button
+        class="my-3 ml-3 mx-0.5 px-5 py-3 text-sm bg-gray-900 text-white shadow rounded-sm"
+      >
+        Add New Password
+      </button>
+
+      <button
+        class="my-3 mx-0.5 px-5 py-3 text-sm border-2 border-gray-900 text-gray-900 shadow rounded-sm"
+      >
+        Edit
+      </button>
+
+      <button
+        class="my-3 mx-0.5 px-5 py-3 text-sm border-2 border-gray-900 text-gray-900 shadow rounded-sm"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
