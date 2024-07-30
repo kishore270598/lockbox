@@ -1,15 +1,14 @@
 import { PasswordMangerService } from './../password-manger.service';
 import { Component } from '@angular/core';
-import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { NgFor } from '@angular/common';
 import { CommonModule } from '@angular/common';
-
+import { PasswordListComponent } from '../password-list/password-list.component';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-site-list',
   standalone: true,
-  imports: [FormsModule, CommonModule, NgFor],
+  imports: [FormsModule, CommonModule, PasswordListComponent, RouterModule],
   templateUrl: './site-list.component.html',
   styleUrl: './site-list.component.css',
 })
