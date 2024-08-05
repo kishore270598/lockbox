@@ -5,10 +5,17 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PasswordListComponent } from '../password-list/password-list.component';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-site-list',
   standalone: true,
-  imports: [FormsModule, CommonModule, PasswordListComponent, RouterModule],
+  imports: [
+    FormsModule,
+    CommonModule,
+    PasswordListComponent,
+    RouterModule,
+    NavbarComponent,
+  ],
   templateUrl: './site-list.component.html',
   styleUrl: './site-list.component.css',
 })
