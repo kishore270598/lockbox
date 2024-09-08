@@ -1,27 +1,97 @@
-# Lockbox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+# Lockbox Password Manager
 
-## Development server
+## Overview
+**Lockbox** is a secure and user-friendly password manager built using Angular for the frontend, Tailwind CSS for styling, and JavaScript for additional functionality. Lockbox helps you manage your passwords securely and efficiently.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- **Secure Storage**: Store and retrieve passwords securely.
+- **User Authentication**: Secure login and registration system.
+- **Password Generation**: Generate strong and secure passwords.
+- **Responsive Design**: Fully responsive UI built with Tailwind CSS.
+- **Encryption**: Encrypt passwords for enhanced security.
 
-## Code scaffolding
+## Technologies Used
+- **Frontend**: Angular
+- **Styling**: Tailwind CSS
+- **Scripting**: TypeScript,JavaScript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+### Prerequisites
+- Node.js and npm installed on your machine
+- Angular CLI installed globally (`npm install -g @angular/cli`)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/lockbox.git
+   cd lockbox
+   ```
 
-## Running unit tests
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running the Application
+1. Start the development server:
+   ```bash
+   ng serve
+   ```
 
-## Running end-to-end tests
+2. Open your browser and navigate to `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Project Structure
+```
+lockbox/
+├── src/
+│   ├── app/
+│   │   ├── login
+│   │   ├── navbar
+│   │   ├── password-list
+│   │   ├── site-list
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   │   └── ...
+│   ├── assets/
+│   ├── environments/
+│   ├── styles/
+│   │   ├── tailwind.css
+│   │   └── ...
+│   ├── index.html
+│   ├── main.ts
+│   └── ...
+├── angular.json
+├── package.json
+├── README.md
+└── ...
+```
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Adding a Password
+1. Navigate to the "Add Password" section.
+2. Enter the necessary details (e.g., website, username, password).
+3. Click "Save" to securely store the password.
+
+### Retrieving a Password
+1. Navigate to the "View Passwords" section.
+2. Select the entry you want to view.
+3. Click "Show" to display the password.
+
+### Generating a Password
+1. Navigate to the "Generate Password" section.
+2. Select your desired password criteria (length, complexity).
+3. Click "Generate" to create a strong password.
+
+## Customization
+
+### Tailwind CSS
+Tailwind CSS can be customized by editing the `tailwind.config.js` file in the root of your project. You can add your own styles or override the default styles.
+
+### Angular Components
+You can extend or modify the Angular components as needed. Each component is located in the `src/app/components/` directory.
