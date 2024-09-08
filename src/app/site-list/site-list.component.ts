@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { PasswordListComponent } from '../password-list/password-list.component';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-site-list',
@@ -28,7 +28,15 @@ export class SiteListComponent {
   formState: string = 'Add New';
   isSuccess: boolean = false;
   SuccessMessage!: string;
-  constructor(private PasswordMangerService: PasswordMangerService) {
+  emailId!: string;
+  constructor(
+    private PasswordMangerService: PasswordMangerService,
+    private router: ActivatedRoute
+  ) {
+    this.router.queryParams.subscribe((param) => {
+      this.emailId = param['email'];
+      console.log(param);
+    });
     this.loadSites();
   }
 
@@ -42,7 +50,9 @@ export class SiteListComponent {
   }
   onSubmit(values: object) {
     if (this.formState == 'Add New') {
-      this.PasswordMangerService.addSite(values)
+      const valueswithemail = { ...values, email: this.emailId };
+      console.log(valueswithemail);
+      this.PasswordMangerService.addSite(valueswithemail)
         .then(() => {
           this.dataAlert('Data Saved Successfully');
         })
@@ -60,7 +70,8 @@ export class SiteListComponent {
     }
   }
   loadSites() {
-    this.allSites = this.PasswordMangerService.loadSites();
+    console.log();
+    this.allSites = this.PasswordMangerService.loadSites(this.emailId);
   }
   editSite(siteName: string, siteURL: string, siteImgURL: string, id: string) {
     this.siteName = siteName;

@@ -6,14 +6,14 @@
     class="w-full border-4 border-gray-900 bg-white rounded-lg shadow max-w-md"
   >
     <div class="p-6 space-y-6">
-      <h1 class="text-2xl font-blod text-gray-900">Log in to your account</h1>
-      <div *ngIf="isError" class="p-5 my-3 bg-red-100 text-red-900">
-        The UserName or Password is Wrong
+      <h1 class="text-2xl font-blod text-gray-900">Create a new account</h1>
+      <div *ngIf="isTrue" class="p-5 my-5 bg-teal-100 text-teal-900">
+        Account has been created
       </div>
-      <div *ngIf="isOlduser" class="p-5 my-3 bg-red-100 text-red-900">
-        UserName already registered
+      <div *ngIf="isExisting" class="p-5 my-5 bg-red-100 text-red-900">
+        Account already in use
       </div>
-      <form #f="ngForm" class="space-y-6" (ngSubmit)="onSubmit(f.value)">
+      <form #f="ngForm" class="space-y-6" (ngSubmit)="Signup(f.value)">
         <div>
           <label class="block mb-2 text-sm font-medium text-gray-900">
             Your Email
@@ -28,7 +28,7 @@
         </div>
         <div>
           <label class="block mb-2 text-sm font-medium text-gray-900">
-            Password
+            New Password
           </label>
           <input
             ngModel
@@ -40,15 +40,16 @@
         </div>
         <button
           class="w-full text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          type="submit"
         >
-          Sign in
+          Sign up
         </button>
-      </form>
-      <form #f="ngForm" class="space-y-6" (ngSubmit)="onSignup(f.value)">
         <button
           class="w-full text-white bg-gray-800 hover:bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+          type="button"
+          (click)="routeback()"
         >
-          New User?
+          Back to login
         </button>
       </form>
     </div>

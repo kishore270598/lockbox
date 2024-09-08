@@ -4,7 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SiteListComponent } from './site-list/site-list.component';
 import { FormsModule } from '@angular/forms';
 import { NgForm } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Component({
   selector: 'app-root',
   standalone: true,

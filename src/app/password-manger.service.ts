@@ -7,8 +7,14 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  query,
+  where,
 } from '@angular/fire/firestore';
-import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import {
+  Auth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+} from '@angular/fire/auth';
 @Injectable({
   providedIn: 'root',
 })
@@ -19,10 +25,12 @@ export class PasswordMangerService {
     return addDoc(dbInstance, data);
   }
   //IDfield is optional but if we don't give id it won't display
-  loadSites() {
+  loadSites(emailid: string) {
     const dbInstance = collection(this.firestore, 'sites');
-    return collectionData(dbInstance, { idField: 'id' });
+    const q = query(dbInstance, where('email', '==', emailid));
+    return collectionData(q, { idField: 'id' });
   }
+
   updateSite(id: string, data: object) {
     const docInstance = doc(this.firestore, 'sites', id);
     return updateDoc(docInstance, data);
@@ -60,5 +68,9 @@ export class PasswordMangerService {
   //login
   login(email: string, password: string) {
     return signInWithEmailAndPassword(this.auth, email, password);
+  }
+  //signup
+  signup(email: string, password: string) {
+    return createUserWithEmailAndPassword(this.auth, email, password);
   }
 }
